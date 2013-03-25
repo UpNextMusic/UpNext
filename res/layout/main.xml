@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<StickyScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/sticky_scrollview"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:id="@+id/playlist_scroll_container"
+        android:layout_width="match_parent"
+        android:layout_height="0dip"
+        android:orientation="vertical" >
+
+        <!-- TODO Timer -->
+        <!-- This will have tag 'sticky-nonconstant' -->
+
+        <!-- TODO Shuffle / Repeat Controls -->
+        <!-- This will have tag 'sticky-nonconstant' -->
+
+        <!-- Album Art Control -->
+        <ImageView
+            android:id="@+id/album_art_image_control"
+            android:layout_width="match_parent"
+            android:layout_height="0dip"
+            android:layout_weight="1"
+            android:contentDescription="@string/app_name"
+            android:scaleType="fitCenter"
+            android:tag="sticky-hastransparency" />
+        
+        <!-- Playlist -->
+        <!-- TODO Static header -->
+        <!-- Items Added Dynamically -->
+
+    </LinearLayout>
+
+</StickyScrollView>

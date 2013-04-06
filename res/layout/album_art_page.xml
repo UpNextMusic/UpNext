@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    android:id="@+id/track_control"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <com.schneenet.android.upnext.views.AlbumArtImageView
+        android:id="@+id/track_control_album_art"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:contentDescription="@string/cd_albumart"
+        android:scaleType="fitEnd"
+        android:src="@drawable/test_album_art" />
+    <LinearLayout
+        android:id="@+id/track_info"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/track_control_album_art"
+        android:background="@color/backgroundSecondaryDark"
+        android:orientation="vertical">
+        <TextView
+            android:id="@+id/track_control_label_artist"
+            style="@style/Text.Subheading"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="10dp"
+            android:ellipsize="marquee"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            android:lines="1"
+            android:marqueeRepeatLimit="marquee_forever"
+            android:maxLines="1"
+            android:scrollHorizontally="true"
+            android:text="@string/test_text_song_artist"
+            android:textAllCaps="true" />
+        <TextView
+            android:id="@+id/track_control_label_title"
+            style="@style/Text"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:ellipsize="marquee"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            android:lines="1"
+            android:marqueeRepeatLimit="marquee_forever"
+            android:maxLines="1"
+            android:scrollHorizontally="true"
+            android:text="@string/test_text_song_title"
+            android:textAllCaps="true" />
+    </LinearLayout>
+</RelativeLayout>

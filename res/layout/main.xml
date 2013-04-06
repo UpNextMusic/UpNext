@@ -1,36 +1,183 @@
 <?xml version="1.0" encoding="utf-8"?>
-<StickyScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+
+<com.emilsjolander.components.StickyScrollViewItems.StickyScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/sticky_scrollview"
+    style="@style/AppTheme.Player"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical" >
-
+    android:orientation="vertical"
+    tools:context=".MainActivity" >
+<!-- 
+    
+    
     <LinearLayout
         android:id="@+id/playlist_scroll_container"
         android:layout_width="match_parent"
         android:layout_height="0dip"
         android:orientation="vertical" >
-
+-->
         <!-- TODO Timer -->
         <!-- This will have tag 'sticky-nonconstant' -->
 
         <!-- TODO Shuffle / Repeat Controls -->
         <!-- This will have tag 'sticky-nonconstant' -->
 
-        <!-- Album Art Control -->
-        <ImageView
-            android:id="@+id/album_art_image_control"
+		<!-- 
+        <LinearLayout
+            android:id="@+id/misc_controls"
             android:layout_width="match_parent"
-            android:layout_height="0dip"
-            android:layout_weight="1"
-            android:contentDescription="@string/app_name"
-            android:scaleType="fitCenter"
-            android:tag="sticky-hastransparency" />
-        
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:tag="sticky-nonconstant" >
+
+            <ImageButton
+                android:id="@+id/button_repeat"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <SeekBar
+                android:id="@+id/seek_bar"
+                android:layout_width="0dip"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" />
+
+            <ImageButton
+                android:id="@+id/button_shuffle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+        -->
+<!-- 
+        <RelativeLayout
+            android:id="@+id/main_control"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:tag="sticky-hastransparency" >
+-->
+            <!-- 
+            <android.support.v4.view.ViewPager
+                android:id="@+id/main_control_album_art_scroller"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+                -->
+<!--             
+            <com.schneenet.android.upnext.views.AlbumArtImageView
+                android:id="@+id/main_control_album_art"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:contentDescription="@string/cd_albumart"
+                android:scaleType="fitEnd"
+                android:src="@drawable/test_album_art" />
+
+            <LinearLayout
+                android:id="@+id/main_controls"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:background="@color/backgroundSecondaryDark"
+                android:orientation="vertical" >
+
+                <TextView
+                    android:id="@+id/main_control_label_artist"
+                    style="@style/Text.Subheading"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginTop="10dp"
+                    android:ellipsize="marquee"
+                    android:focusable="true"
+                    android:focusableInTouchMode="true"
+                    android:lines="1"
+                    android:marqueeRepeatLimit="marquee_forever"
+                    android:maxLines="1"
+                    android:scrollHorizontally="true"
+                    android:text="@string/test_text_song_artist"
+                    android:textAllCaps="true" />
+
+                <TextView
+                    android:id="@+id/main_control_label_title"
+                    style="@style/Text"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:ellipsize="marquee"
+                    android:focusable="true"
+                    android:focusableInTouchMode="true"
+                    android:lines="1"
+                    android:marqueeRepeatLimit="marquee_forever"
+                    android:maxLines="1"
+                    android:scrollHorizontally="true"
+                    android:text="@string/test_text_song_title"
+                    android:textAllCaps="true" />
+
+                <LinearLayout
+                    android:id="@+id/main_control_status"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:orientation="horizontal" >
+
+                    <ImageView
+                        android:id="@+id/main_control_icon_status"
+                        android:layout_width="16sp"
+                        android:layout_height="16sp"
+                        android:contentDescription="@string/cd_status"
+                        android:src="@android:drawable/ic_media_play" />
+
+                    <TextView
+                        android:id="@+id/main_control_label_time"
+                        style="@style/Text.Time"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/test_text_song_time" />
+
+                    <TextView
+                        android:id="@+id/main_control_label_time_delim"
+                        style="@style/Text.Time.Secondary"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/time_delim" />
+
+                    <TextView
+                        android:id="@+id/main_control_label_time_of"
+                        style="@style/Text.Time.Secondary"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/test_text_song_time_of" />
+                </LinearLayout>
+
+                <SeekBar
+                    android:id="@+id/main_control_seek"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:visibility="gone" />
+
+                <ProgressBar
+                    android:id="@+id/main_control_progress"
+                    style="?android:attr/progressBarStyleHorizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:max="360"
+                    android:progress="124"
+                    android:secondaryProgress="254" />
+            </LinearLayout>
+        </RelativeLayout>
+-->
         <!-- Playlist -->
         <!-- TODO Static header -->
         <!-- Items Added Dynamically -->
-
+<!-- 
+        <LinearLayout
+            android:id="@+id/playlist_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+        </LinearLayout>
     </LinearLayout>
-
-</StickyScrollView>
+-->
+</com.emilsjolander.components.StickyScrollViewItems.StickyScrollView>

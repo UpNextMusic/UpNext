@@ -1,5 +1,21 @@
 <resources>
 
     <string name="app_name">Up Next</string>
+    
+    <!-- Content Descriptions -->
+    <string name="cd_status">Player Status</string>
+    <string name="cd_albumart">Album Artwork</string>
+    
+    <!-- UI Strings -->
+    <string name="time_delim">|</string>
+    
+    <!-- Layout Test Strings -->
+    <string name="test_text_primary">Primary Text</string>
+    <string name="test_text_secondary">Secondary Text</string>
+    <string name="test_text_song_title">United States of Eurasia [+Collateral Damage]</string>
+    <string name="test_text_song_artist">Muse</string>
+    <string name="test_text_song_album">The Resistance</string>
+    <string name="test_text_song_time">1:17</string>
+    <string name="test_text_song_time_of">5:48</string>
 
 </resources>

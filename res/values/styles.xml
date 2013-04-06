@@ -1,20 +1,52 @@
-<resources>
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <!--
-        Base application theme, dependent on API level. This theme is replaced
-        by AppBaseTheme from res/values-vXX/styles.xml on newer devices.
-    -->
-    <style name="AppBaseTheme" parent="android:Theme.Light">
-        <!--
-            Theme customizations available in newer API levels can go in
-            res/values-vXX/styles.xml, while customizations related to
-            backward-compatibility can go here.
-        -->
+	<style name="AppTheme" parent="android:Theme.Holo">
+        <!-- Base Theme Customizations -->
+        <!-- All Activities in the application get at least this theme -->
+        <!-- All lesser themes should inherit from this theme -->
+        
+        <item name="android:textSize">@dimen/textSize</item>
+        <item name="android:textColor">@color/foregroundPrimaryDark</item>
     </style>
-
-    <!-- Application theme. -->
-    <style name="AppTheme" parent="AppBaseTheme">
-        <!-- All customizations that are NOT specific to a particular API-level can go here. -->
+    
+    <!-- Activity Specific Themes -->
+    <style name="AppTheme.Player" parent="AppTheme">
+        <item name="android:windowFullscreen">true</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowActionBar">false</item>
+        <item name="android:background">@color/backgroundPrimaryDark</item>
+    </style>
+    
+    <!-- Text Styles -->
+    <style name="Text">
+        <!-- 18DP/22SP #FFFFFF ROBOTO REGULAR -->
+        <item name="android:textColor">@color/foregroundPrimaryDark</item>
+        <item name="android:textSize">@dimen/textSize</item>
+    </style>
+    
+    <style name="Text.Secondary" parent="Text">
+        <!-- 14DP/16SP #777777 ROBOTO REGULAR -->
+        <item name="android:textColor">@color/foregroundSecondaryDark</item>
+        <item name="android:textSize">@dimen/textSizeSmall</item>
+    </style>
+    
+    <style name="Text.Subheading" parent="Text.Secondary">
+        <!-- 14DP/16SP #CCCCCC ROBOTO BOLD -->
+        <item name="android:textColor">@color/foregroundSubheadingsDark</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+    
+    <style name="Text.Time">
+        <item name="android:textSize">@dimen/textSizeSmaller</item>
+    </style>
+    
+    <style name="Text.Time.Secondary">
+        <item name="android:textColor">@color/foregroundSubheadingsDark</item>
+    </style>
+    
+    <style name="Text.FinePrint" parent="Text">
+        <!-- 10DP/12SP #5E5E5E ROBOTO THIN ITALIC -->
+        <!-- TODO -->
     </style>
 
 </resources>

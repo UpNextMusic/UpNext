@@ -14,7 +14,7 @@
  * limitations under the License.
  */
  
-package com.schneenet.android.upnext;
+package com.schneenet.android.upnext.views;
  
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;

@@ -52,9 +52,7 @@ public class MediaAccessTask extends AsyncTask<LocalPlaylistDef, Void, LocalPlay
 					MediaStore.Audio.Media.TRACK,
 					MediaStore.Audio.Media.DATA
 			};
-			c = mContext.getContentResolver().query(MediaStore.Audio.Media.EXTERNAL_CONTENT_URI, projection, MediaStore.Audio.Media.IS_MUSIC + " = ? && " + MediaStore.Audio.Media._ID + " = ?", new String[] {
-					"true", String.valueOf(id)
-			}, null);
+			c = mContext.getContentResolver().query(MediaStore.Audio.Media.EXTERNAL_CONTENT_URI, projection, MediaStore.Audio.Media.IS_MUSIC + " = ? AND " + MediaStore.Audio.Media._ID + " = ?", new String[] {"1", String.valueOf(id)	}, null);
 			if (c.moveToNext())
 			{
 				long _id = c.getLong(c.getColumnIndex(MediaStore.Audio.Media._ID));

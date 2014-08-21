@@ -5,6 +5,8 @@ import java.util.Iterator;
 
 import android.content.Context;
 
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonDeserializationContext;
 import com.google.gson.JsonDeserializer;
@@ -22,10 +24,14 @@ public class LocalPlaylistManager extends PlaylistManager implements JsonSeriali
 {
 	
 	private MediaAccessTask mMediaAccess;
+	private Gson mGsonInstance;
 	
 	public LocalPlaylistManager(Context ctxt)
 	{
 		mMediaAccess = new MediaAccessTask(ctxt);
+		GsonBuilder gsonBuilder = new GsonBuilder();
+		gsonBuilder.registerTypeAdapter(LocalPlaylist.class, this);
+		mGsonInstance = gsonBuilder.create();
 	}
 	
 	@Override
@@ -48,8 +54,8 @@ public class LocalPlaylistManager extends PlaylistManager implements JsonSeriali
 		LocalPlaylistDef newPlaylistDef = new LocalPlaylistDef();
 		Iterator<JsonElement> iter = plObject.get(PROP_SONGLIST).getAsJsonArray().iterator();
 		while (iter.hasNext()) {
-			long key = iter.next().getAsLong();
-			newPlaylistDef.addTrackId(key);
+			long id = iter.next().getAsLong();
+			newPlaylistDef.addTrackId(id);
 		}
 		return mMediaAccess.inflatePlaylist(newPlaylistDef);
 	}
@@ -58,14 +64,12 @@ public class LocalPlaylistManager extends PlaylistManager implements JsonSeriali
 	
 	@Override
 	public String serializePlaylist(Playlist playlist) {
-		// TODO Auto-generated method stub
-		return null;
+		return mGsonInstance.toJson(playlist, LocalPlaylist.class);
 	}
 
 	@Override
 	public Playlist deserializePlaylist(String jsonString) {
-		// TODO Auto-generated method stub
-		return null;
+		return mGsonInstance.fromJson(jsonString, LocalPlaylist.class);
 	}
 
 	@Override

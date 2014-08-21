@@ -8,6 +8,8 @@
     
     <!-- UI Strings -->
     <string name="time_delim">|</string>
+    <string name="text_default_artist"></string>
+    <string name="text_default_title">@string/app_name</string>
     
     <!-- Layout Test Strings -->
     <string name="test_text_primary">Primary Text</string>

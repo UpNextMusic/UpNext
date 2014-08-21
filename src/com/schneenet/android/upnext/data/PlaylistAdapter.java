@@ -19,11 +19,16 @@ public class PlaylistAdapter extends BaseAdapter implements OnDismissCallback {
 	private LayoutInflater mLayoutInflater;
 	private OnItemDeleteListener mItemDeleteListener;
 	
-	public PlaylistAdapter(Context context, Playlist playlist, OnItemDeleteListener itemDeleteListener)
+	public PlaylistAdapter(Context context, OnItemDeleteListener itemDeleteListener)
 	{
-		mPlaylist = playlist;
 		mLayoutInflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 		mItemDeleteListener = itemDeleteListener;
+	}
+	
+	public void setPlaylist(Playlist playlist)
+	{
+		mPlaylist = playlist;
+		notifyDataSetChanged();
 	}
 	
 	public Playable getSongItem(int position)

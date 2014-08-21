@@ -52,7 +52,7 @@
             android:tag="sticky-hastransparency">
             
             <!-- ViewPager -->
-            <android.support.v4.view.ViewPager
+            <com.schneenet.android.upnext.views.SquareViewPager
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:id="@+id/track_pager" />
@@ -100,8 +100,18 @@
             </LinearLayout>
         </RelativeLayout>
         
-    	<!-- Playlist -->
-    	<!-- TODO Static header -->
+    	<!-- Next two songs in playlist -->
+        <TextView
+            android:id="@+id/playlist_header"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/app_name"
+            style="@style/Text.ListHeading" /> 
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:background="@drawable/divider_horizontal_dark_opaque" />
+        
     	<!-- Items Added Dynamically -->
         <LinearLayout
             android:id="@+id/playlist_view"

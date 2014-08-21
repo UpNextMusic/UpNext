@@ -17,6 +17,7 @@ public class UpNextApplication extends MusicClubPlayerApplication {
 	@Override
 	public void launchPlayer() {
 		Intent playerIntent = new Intent(this, MainActivity.class);
+		playerIntent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
 		startActivity(playerIntent);
 	}
 

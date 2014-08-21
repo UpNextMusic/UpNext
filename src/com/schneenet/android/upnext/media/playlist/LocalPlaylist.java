@@ -13,6 +13,12 @@ public class LocalPlaylist implements Playlist
 	private ArrayList<Playable> mSongList;
 	private ArrayList<Playable> mSongListRand;
 
+	public LocalPlaylist()
+	{
+		mSongList = new ArrayList<Playable>();
+		mSongListRand = new ArrayList<Playable>();
+	}
+	
 	@Override
 	public List<Playable> getTrackList()
 	{

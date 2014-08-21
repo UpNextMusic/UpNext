@@ -30,10 +30,22 @@
         <item name="android:textSize">@dimen/textSizeSmall</item>
     </style>
     
-    <style name="Text.Subheading" parent="Text.Secondary">
+    <style name="Text.SubHeading" parent="Text.Secondary">
         <!-- 14DP/16SP #CCCCCC ROBOTO BOLD -->
-        <item name="android:textColor">@color/foregroundSubheadingsDark</item>
         <item name="android:textStyle">bold</item>
+    </style>
+    
+    <style name="Text.ListHeading" parent="android:Theme.Holo">
+        <!-- 14DP/16SP #CCCCCC ROBOTO BOLD -->
+        <!-- This is the standard list seprator heading from Android -->
+        <item name="android:background">@drawable/dark_header</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">?android:attr/textColorSecondary</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:paddingLeft">8dip</item>
     </style>
     
     <style name="Text.Time">

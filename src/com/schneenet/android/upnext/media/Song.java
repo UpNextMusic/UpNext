@@ -59,7 +59,7 @@ public class Song extends ContentObject implements Playable {
 
 	@Override
 	public String getKey() {
-		return this.getClass().getName() + ":" + String.valueOf(mId);
+		return String.valueOf(mId);
 	}
 
 	@Override
